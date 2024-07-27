@@ -1,32 +1,28 @@
 package system.management.employee;
 
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class EmployeeList {
-    private final Set<Employee> employees = new HashSet<Employee>();
+    private final static List<Employee> employees = new ArrayList<Employee>();
 
     public EmployeeList() { }
 
-    public void addEmployee(Employee employee) {
+    public static void addEmployee(Employee employee) {
         employees.add(employee);
     }
 
-    public Employee getEmployee(String id) {
-        for(Employee employee : employees) {
-            if(employee.getEmployeeID().equals(id)) {
-                return employee;
-            }
-        }
-        return null;
+    public static void updateEmployee(int i, Employee employee) {
+        employees.set(i, employee);
     }
 
-    public void updateEmployee(String id, Employee employee) {
-        employees.removeIf(emp -> emp.getEmployeeID().equals(id));
-        employees.add(employee);
-    }
-
-    public void removeEmployee(Employee employee) {
+    public static void removeEmployee(Employee employee) {
         employees.remove(employee);
+    }
+
+    public static List<Employee> getEmployees() {
+        return employees;
     }
 }

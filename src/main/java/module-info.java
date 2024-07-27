@@ -7,4 +7,6 @@ module system.employeemanagesystem {
     opens system.app to javafx.fxml;
     exports system.controller;
     opens system.controller to javafx.fxml;
+    exports system.controller.employee;
+    opens system.controller.employee to javafx.fxml;
 }

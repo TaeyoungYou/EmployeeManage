@@ -128,6 +128,6 @@
       </VBox>
    </left>
    <center>
-      <BorderPane fx:id="mainContent" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+      <BorderPane fx:id="mainContent" prefWidth="1080.0" style="-fx-background-color: #eeeeee;" BorderPane.alignment="CENTER" />
    </center>
 </BorderPane>

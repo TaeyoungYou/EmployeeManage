@@ -13,7 +13,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
 
-import javax.print.DocFlavor;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
@@ -65,7 +64,7 @@ public class BasicPageController implements Initializable {
                 recordIcon.setImage(new Image(getClass().getResourceAsStream("/icon/record_blue.png")));
                 break;
             case "empLabel":
-                fxmlFile = "/system/app/emp-page.fxml";
+                fxmlFile = "/system/app/employee/emp-page.fxml";
                 empLabel.setStyle("-fx-text-fill: #388EF4;");
                 empIcon.setImage(new Image(getClass().getResourceAsStream("/icon/employee_blue.png")));
                 break;
