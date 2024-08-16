@@ -3,71 +3,119 @@
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="50.0" prefWidth="1020.0" style="-fx-background-color: #eeeeee;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="system.controller.employee.EmpUpdateController">
-  <columnConstraints>
-    <ColumnConstraints hgrow="SOMETIMES" percentWidth="5.0" />
-      <ColumnConstraints hgrow="SOMETIMES" percentWidth="10.0" />
-      <ColumnConstraints hgrow="SOMETIMES" percentWidth="12.0" />
-      <ColumnConstraints hgrow="SOMETIMES" percentWidth="15.0" />
-      <ColumnConstraints hgrow="SOMETIMES" percentWidth="20.0" />
-      <ColumnConstraints hgrow="SOMETIMES" percentWidth="10.0" />
-      <ColumnConstraints hgrow="SOMETIMES" percentWidth="10.0" />
-    <ColumnConstraints hgrow="SOMETIMES" />
-  </columnConstraints>
-  <rowConstraints>
-      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-  </rowConstraints>
-   <padding>
-      <Insets left="10.0" right="10.0" />
-   </padding>
+<VBox alignment="TOP_CENTER" minWidth="-Infinity" prefHeight="670.0" style="-fx-background-color: #2B2D30;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="system.controller.employee.EmpUpdateController">
    <children>
-      <Label onMouseClicked="#submitButtonAction" text="확인" textFill="#818380">
-         <font>
-            <Font size="15.0" />
-         </font>
-         <GridPane.margin>
-            <Insets left="5.0" />
-         </GridPane.margin>
+      <ImageView fx:id="updateIcon" fitHeight="40.0" fitWidth="40.0" onMouseClicked="#updateClick" onMouseEntered="#updateEnter" onMouseExited="#updateExit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../icon/update_check.png" />
+         </image>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
-      </Label>
-      <TextField fx:id="name" GridPane.columnIndex="1" />
-      <TextField fx:id="birth" GridPane.columnIndex="2">
-         <GridPane.margin>
-            <Insets left="5.0" />
-         </GridPane.margin>
-      </TextField>
-      <TextField fx:id="phone" GridPane.columnIndex="3">
-         <GridPane.margin>
-            <Insets left="5.0" />
-         </GridPane.margin>
-      </TextField>
-      <TextField fx:id="email" GridPane.columnIndex="4">
-         <GridPane.margin>
-            <Insets left="5.0" />
-         </GridPane.margin>
-      </TextField>
-      <TextField fx:id="exp" GridPane.columnIndex="5">
-         <GridPane.margin>
-            <Insets left="5.0" />
-         </GridPane.margin>
-      </TextField>
-      <TextField fx:id="role" GridPane.columnIndex="6">
-         <GridPane.margin>
-            <Insets left="5.0" />
-         </GridPane.margin>
-      </TextField>
-      <TextField fx:id="etc" GridPane.columnIndex="7">
-         <GridPane.margin>
-            <Insets left="5.0" right="5.0" />
-         </GridPane.margin>
-      </TextField>
+         <VBox.margin>
+            <Insets right="950.0" />
+         </VBox.margin>
+      </ImageView>
+      <GridPane alignment="CENTER" maxHeight="30.0" maxWidth="1020.0" minHeight="30.0" minWidth="1020.0" prefHeight="30.0" prefWidth="1020.0" style="-fx-background-color: #1E1F22;">
+         <columnConstraints>
+            <ColumnConstraints percentWidth="5.0" />
+            <ColumnConstraints hgrow="NEVER" maxWidth="5.0" minWidth="5.0" percentWidth="10.0" prefWidth="5.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="12.0" minWidth="12.0" percentWidth="12.0" prefWidth="12.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="15.0" minWidth="15.0" percentWidth="15.0" prefWidth="15.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="20.0" minWidth="20.0" percentWidth="20.0" prefWidth="20.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="30.0" minWidth="30.0" percentWidth="10.0" prefWidth="30.0" />
+            <ColumnConstraints hgrow="SOMETIMES" percentWidth="10.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints fillHeight="false" maxHeight="7.0" minHeight="7.0" percentHeight="7.0" prefHeight="7.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="선택" textFill="#818380">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets />
+               </GridPane.margin>
+            </Label>
+            <Label text="이름" textFill="#818380" GridPane.columnIndex="1">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="생년월일" textFill="#818380" GridPane.columnIndex="2">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="전화번호" textFill="#818380" GridPane.columnIndex="3">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="이메일" textFill="#818380" GridPane.columnIndex="4">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="경력" textFill="#818380" GridPane.columnIndex="5">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="직책" textFill="#818380" GridPane.columnIndex="6">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+            <Label text="비고" textFill="#818380" GridPane.columnIndex="7">
+               <font>
+                  <Font size="15.0" />
+               </font>
+               <GridPane.margin>
+                  <Insets left="5.0" />
+               </GridPane.margin>
+            </Label>
+         </children>
+         <VBox.margin>
+            <Insets />
+         </VBox.margin>
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+      </GridPane>
+      <ScrollPane fx:id="dataField" fitToHeight="true" fitToWidth="true" focusTraversable="false" hbarPolicy="NEVER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="536.0" prefWidth="1020.0" style="-fx-focus-color: transparent; -fx-faint-focus-color: transparent;" />
    </children>
-</GridPane>
+   <padding>
+      <Insets bottom="55.0" left="10.0" right="10.0" />
+   </padding>
+</VBox>

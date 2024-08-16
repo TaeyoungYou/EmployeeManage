@@ -1,16 +1,10 @@
 package system.controller.employee;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.CheckBox;
 import javafx.scene.control.TextField;
 import system.management.employee.Employee;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
-public class EmpDataController {
+public class EmpUpdateSubController {
 
     @FXML
     private TextField name;
@@ -43,4 +37,35 @@ public class EmpDataController {
         etc.setText(employee.getEtc());
     }
 
+    public TextField getName() {
+        return name;
+    }
+
+    public TextField getBirth() {
+        return birth;
+    }
+
+    public TextField getPhone() {
+        return phone;
+    }
+
+    public TextField getEmail() {
+        return email;
+    }
+
+    public TextField getExp() {
+        return exp;
+    }
+
+    public TextField getRole() {
+        return role;
+    }
+
+    public TextField getEtc() {
+        return etc;
+    }
+
+    public String[] getData(){
+        return new String[]{getName().getText(),getBirth().getText(),getPhone().getText(),getEmail().getText(),getExp().getText(),getRole().getText(),getEtc().getText()};
+    }
 }

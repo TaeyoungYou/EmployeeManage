@@ -14,12 +14,16 @@ public class EmployeeList {
         employees.add(employee);
     }
 
-    public static void updateEmployee(int i, Employee employee) {
-        employees.set(i, employee);
+    public static void updateEmployee(Employee beforeEmp, Employee afterEmp) {
+        employees.set(employees.indexOf(beforeEmp), afterEmp);
     }
 
     public static void removeEmployee(Employee employee) {
         employees.remove(employee);
+    }
+
+    public static void removeEmployee(int i){
+        employees.remove(i);
     }
 
     public static List<Employee> getEmployees() {

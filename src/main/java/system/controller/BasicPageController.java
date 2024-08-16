@@ -1,5 +1,6 @@
 package system.controller;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -31,7 +32,8 @@ public class BasicPageController implements Initializable {
     @FXML private BorderPane mainContent;
     private void loadContent(String fxmlFile){
         try{
-            Pane content = FXMLLoader.load(getClass().getResource(fxmlFile));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlFile));
+            Pane content = loader.load();
             mainContent.setCenter(content);
         }catch(IOException e){
             e.printStackTrace();
@@ -68,6 +70,7 @@ public class BasicPageController implements Initializable {
                 empLabel.setStyle("-fx-text-fill: #388EF4;");
                 empIcon.setImage(new Image(getClass().getResourceAsStream("/icon/employee_blue.png")));
                 break;
+
         }
 
         selectedLabel = menuLabel;
@@ -197,6 +200,7 @@ public class BasicPageController implements Initializable {
             empIcon.setImage(new Image(getClass().getResourceAsStream("/icon/employee.png")));
         }
     }
+
 
 }
 
