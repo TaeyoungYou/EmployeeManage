@@ -1,6 +1,7 @@
 package system.management.employee;
 
 public class Employee {
+    public static final int num = 7;
     private String name;
     private String birth;
     private String phone;

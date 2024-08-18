@@ -1,6 +1,5 @@
 package system.controller;
 
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -70,6 +69,10 @@ public class BasicPageController implements Initializable {
                 empLabel.setStyle("-fx-text-fill: #388EF4;");
                 empIcon.setImage(new Image(getClass().getResourceAsStream("/icon/employee_blue.png")));
                 break;
+            case "settingLabel":
+                fxmlFile = "/system/app/setting-page.fxml";
+                settingLabel.setStyle("-fx-text-fill: #388EF4;");
+                settingIcon.setImage(new Image(getClass().getResourceAsStream("/icon/setting_blue.png")));
 
         }
 
@@ -82,11 +85,13 @@ public class BasicPageController implements Initializable {
         reportLabel.setStyle("-fx-text-fill: #818380;");
         recordLabel.setStyle("-fx-text-fill: #818380;");
         empLabel.setStyle("-fx-text-fill: #818380;");
+        settingLabel.setStyle("-fx-text-fill: #818380;");
 
         homeIcon.setImage(new Image(getClass().getResourceAsStream("/icon/home.png")));
         reportIcon.setImage(new Image(getClass().getResourceAsStream("/icon/report.png")));
         recordIcon.setImage(new Image(getClass().getResourceAsStream("/icon/record.png")));
         empIcon.setImage(new Image(getClass().getResourceAsStream("/icon/employee.png")));
+        settingIcon.setImage(new Image(getClass().getResourceAsStream("/icon/setting.png")));
     }
 
 
@@ -198,6 +203,23 @@ public class BasicPageController implements Initializable {
         if(selectedLabel != empLabel) {
             empLabel.setStyle("-fx-text-fill: #818380;");
             empIcon.setImage(new Image(getClass().getResourceAsStream("/icon/employee.png")));
+        }
+    }
+
+    @FXML private Label settingLabel;
+    @FXML private ImageView settingIcon;
+    @FXML
+    private void handleMouseEnterSetting(MouseEvent event) {
+        if(selectedLabel != settingLabel){
+            settingLabel.setStyle("-fx-text-fill: #388EF4;");
+            settingIcon.setImage(new Image(getClass().getResourceAsStream("/icon/setting_blue.png")));
+        }
+    }
+    @FXML
+    private void handleMouseExitSetting(MouseEvent event) {
+        if(selectedLabel != settingLabel) {
+            settingLabel.setStyle("-fx-text-fill: #818380;");
+            settingIcon.setImage(new Image(getClass().getResourceAsStream("/icon/setting.png")));
         }
     }
 

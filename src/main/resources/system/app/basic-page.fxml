@@ -113,9 +113,28 @@
                </graphic>
             </Label>
             <Line endX="200.0" stroke="#2c2c2c" />
+            <Label fx:id="settingLabel" graphicTextGap="15.0" onMouseClicked="#handleClick" onMouseEntered="#handleMouseEnterSetting" onMouseExited="#handleMouseExitSetting" prefHeight="50.0" prefWidth="200.0" text="설정" textFill="#818380">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="settingIcon" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icon/setting.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Label>
+            <Line endX="200.0" stroke="#2c2c2c" />
             <ImageView fx:id="exitButton" onMouseClicked="#MouseClickedExit" onMouseEntered="#handleMouseEnterPower" onMouseExited="#handleMouseExitPower" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
-                  <Insets left="80.0" top="280.0" />
+                  <Insets left="80.0" top="220.0" />
                </VBox.margin>
                <image>
                   <Image url="@../../icon/power.png" />
