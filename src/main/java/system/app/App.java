@@ -6,15 +6,17 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import system.management.employee.EmpExel;
-import system.management.employee.EmpFile;
+import system.management.location.LocationExel;
+import system.management.path.ManageFile;
 
 import java.io.IOException;
 
 public class App extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        EmpFile.initProperties("src/main/resources/path/filePaths.csv");
+        ManageFile.initProperties("src/main/resources/path/filePaths.csv");
         EmpExel.readEmpExel();
+        LocationExel.readLocationExel();
 
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/system/app/basic-page.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -25,9 +27,9 @@ public class App extends Application {
 
     @Override
     public void stop() throws IOException {
-        EmpFile.saveProperty("src/main/resources/path/filePaths.csv");
+        ManageFile.saveProperty("src/main/resources/path/filePaths.csv");
         EmpExel.saveEmpExel();
-
+        LocationExel.saveLocationExel();
     }
 
     public static void main(String[] args) {

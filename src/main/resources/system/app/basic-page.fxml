@@ -66,7 +66,7 @@
                </padding>
             </Label>
             <Line endX="200.0" stroke="#2c2c2c" />
-            <Label fx:id="recordLabel" graphicTextGap="15.0" onMouseClicked="#handleClick" onMouseEntered="#handleMouseEnterRecord" onMouseExited="#handleMouseExitRecord" prefHeight="50.0" prefWidth="200.0" text="일일기록" textFill="#818380">
+            <Label fx:id="recordLabel" graphicTextGap="15.0" onMouseClicked="#handleClick" onMouseEntered="#handleMouseEnterRecord" onMouseExited="#handleMouseExitRecord" prefHeight="50.0" prefWidth="200.0" text="출퇴근" textFill="#818380">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -83,6 +83,25 @@
                      </image>
                   </ImageView>
                </graphic>
+            </Label>
+            <Line endX="200.0" stroke="#2c2c2c" />
+            <Label fx:id="moneyLabel" graphicTextGap="15.0" onMouseClicked="#handleClick" onMouseEntered="#handleMouseEnterMoney" onMouseExited="#handleMouseExitMoney" prefHeight="50.0" prefWidth="200.0" text="일당" textFill="#818380">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="moneyIcon" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icon/money.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
             </Label>
             <Line endX="200.0" stroke="#2c2c2c" />
             <Label alignment="BOTTOM_LEFT" prefHeight="50.0" prefWidth="200.0" text="관리" textFill="#818380">
@@ -113,6 +132,25 @@
                </graphic>
             </Label>
             <Line endX="200.0" stroke="#2c2c2c" />
+            <Label fx:id="locateLabel" graphicTextGap="15.0" onMouseClicked="#handleClick" onMouseEntered="#handleMouseEnterLocate" onMouseExited="#handleMouseExitLocate" prefHeight="50.0" prefWidth="200.0" text="지점" textFill="#818380">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="locateIcon" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icon/map.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Label>
+            <Line endX="200.0" stroke="#2c2c2c" />
             <Label fx:id="settingLabel" graphicTextGap="15.0" onMouseClicked="#handleClick" onMouseEntered="#handleMouseEnterSetting" onMouseExited="#handleMouseExitSetting" prefHeight="50.0" prefWidth="200.0" text="설정" textFill="#818380">
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -134,7 +172,7 @@
             <Line endX="200.0" stroke="#2c2c2c" />
             <ImageView fx:id="exitButton" onMouseClicked="#MouseClickedExit" onMouseEntered="#handleMouseEnterPower" onMouseExited="#handleMouseExitPower" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
-                  <Insets left="80.0" top="220.0" />
+                  <Insets left="80.0" top="125.0" />
                </VBox.margin>
                <image>
                   <Image url="@../../icon/power.png" />

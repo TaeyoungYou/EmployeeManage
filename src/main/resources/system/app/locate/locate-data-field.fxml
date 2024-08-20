@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#handleClicked" prefHeight="50.0" prefWidth="250.0" style="-fx-background-color: #2B2D30; -fx-focus-color: #eeeeee; -fx-faint-focus-color: #eeeeee;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="system.controller.locate.LocateDataController">
+   <children>
+      <Label fx:id="dataText" onMouseClicked="#handleClicked" prefHeight="30.0" prefWidth="200.0" text="NULL" textFill="#eeeeee">
+         <font>
+            <Font size="14.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+      </Label>
+      <ImageView fx:id="delBtn" fitHeight="30.0" fitWidth="30.0" onMouseClicked="#delClicked" onMouseEntered="#delEnter" onMouseExited="#delExit" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../icon/del.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+   <padding>
+      <Insets bottom="10.0" left="10.0" top="10.0" />
+   </padding>
+   <cursor>
+      <Cursor fx:constant="DEFAULT" />
+   </cursor>
+</HBox>

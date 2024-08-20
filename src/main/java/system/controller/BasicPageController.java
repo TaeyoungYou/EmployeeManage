@@ -22,7 +22,7 @@ public class BasicPageController implements Initializable {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        loadContent("/system/app/home-page.fxml");
+        loadContent("/system/app/home/home-page.fxml");
         homeLabel.setStyle("-fx-text-fill: #388EF4;");
         homeIcon.setImage(new Image(getClass().getResourceAsStream("/icon/home_blue.png")));
         selectedLabel = homeLabel;
@@ -50,27 +50,37 @@ public class BasicPageController implements Initializable {
 
         switch(menuLabel.getId()){
             case "homeLabel":
-                fxmlFile = "/system/app/home-page.fxml";
+                fxmlFile = "/system/app/home/home-page.fxml";
                 homeLabel.setStyle("-fx-text-fill: #388EF4;");
                 homeIcon.setImage(new Image(getClass().getResourceAsStream("/icon/home_blue.png")));
                 break;
             case "reportLabel":
-                fxmlFile = "/system/app/report-page.fxml";
+                fxmlFile = "/system/app/report/report-page.fxml";
                 reportLabel.setStyle("-fx-text-fill: #388EF4;");
                 reportIcon.setImage(new Image(getClass().getResourceAsStream("/icon/report_blue.png")));
                 break;
             case "recordLabel":
-                fxmlFile = "/system/app/record-page.fxml";
+                fxmlFile = "/system/app/record/record-page.fxml";
                 recordLabel.setStyle("-fx-text-fill: #388EF4;");
                 recordIcon.setImage(new Image(getClass().getResourceAsStream("/icon/record_blue.png")));
+                break;
+            case "moneyLabel":
+                fxmlFile = "/system/app/money/money-page.fxml";
+                moneyLabel.setStyle("-fx-text-fill: #388EF4");
+                moneyIcon.setImage(new Image(getClass().getResourceAsStream("/icon/money_blue.png")));
                 break;
             case "empLabel":
                 fxmlFile = "/system/app/employee/emp-page.fxml";
                 empLabel.setStyle("-fx-text-fill: #388EF4;");
                 empIcon.setImage(new Image(getClass().getResourceAsStream("/icon/employee_blue.png")));
                 break;
+            case "locateLabel":
+                fxmlFile = "/system/app/locate/locate-page.fxml";
+                locateLabel.setStyle("-fx-text-fill: #388EF4;");
+                locateIcon.setImage(new Image(getClass().getResourceAsStream("/icon/map_blue.png")));
+                break;
             case "settingLabel":
-                fxmlFile = "/system/app/setting-page.fxml";
+                fxmlFile = "/system/app/setting/setting-page.fxml";
                 settingLabel.setStyle("-fx-text-fill: #388EF4;");
                 settingIcon.setImage(new Image(getClass().getResourceAsStream("/icon/setting_blue.png")));
 
@@ -84,13 +94,17 @@ public class BasicPageController implements Initializable {
         homeLabel.setStyle("-fx-text-fill: #818380;");
         reportLabel.setStyle("-fx-text-fill: #818380;");
         recordLabel.setStyle("-fx-text-fill: #818380;");
+        moneyLabel.setStyle("-fx-text-fill: #818380;");
         empLabel.setStyle("-fx-text-fill: #818380;");
+        locateLabel.setStyle("-fx-text-fill: #818380;");
         settingLabel.setStyle("-fx-text-fill: #818380;");
 
         homeIcon.setImage(new Image(getClass().getResourceAsStream("/icon/home.png")));
         reportIcon.setImage(new Image(getClass().getResourceAsStream("/icon/report.png")));
         recordIcon.setImage(new Image(getClass().getResourceAsStream("/icon/record.png")));
+        moneyIcon.setImage(new Image(getClass().getResourceAsStream("/icon/money.png")));
         empIcon.setImage(new Image(getClass().getResourceAsStream("/icon/employee.png")));
+        locateIcon.setImage(new Image(getClass().getResourceAsStream("/icon/map.png")));
         settingIcon.setImage(new Image(getClass().getResourceAsStream("/icon/setting.png")));
     }
 
@@ -188,6 +202,22 @@ public class BasicPageController implements Initializable {
             recordIcon.setImage(new Image(getClass().getResourceAsStream("/icon/record.png")));
         }
     }
+    @FXML private Label moneyLabel;
+    @FXML private ImageView moneyIcon;
+    @FXML
+    private void handleMouseEnterMoney(MouseEvent even){
+        if(selectedLabel != moneyLabel){
+            moneyLabel.setStyle("-fx-text-fill: #388EF4;");
+            moneyIcon.setImage(new Image(getClass().getResourceAsStream("/icon/money_blue.png")));
+        }
+    }
+    @FXML
+    private void handleMouseExitMoney(MouseEvent event){
+        if(selectedLabel != moneyLabel){
+            moneyLabel.setStyle("-fx-text-fill: #818380;");
+            moneyIcon.setImage(new Image(getClass().getResourceAsStream("/icon/money.png")));
+        }
+    }
 
     @FXML private Label empLabel;
     @FXML private ImageView empIcon;
@@ -203,6 +233,23 @@ public class BasicPageController implements Initializable {
         if(selectedLabel != empLabel) {
             empLabel.setStyle("-fx-text-fill: #818380;");
             empIcon.setImage(new Image(getClass().getResourceAsStream("/icon/employee.png")));
+        }
+    }
+
+    @FXML private Label locateLabel;
+    @FXML private ImageView locateIcon;
+    @FXML
+    private void handleMouseEnterLocate(MouseEvent event) {
+        if(selectedLabel != locateLabel) {
+            locateLabel.setStyle("-fx-text-fill: #388EF4;");
+            locateIcon.setImage(new Image(getClass().getResourceAsStream("/icon/map_blue.png")));
+        }
+    }
+    @FXML
+    private void handleMouseExitLocate(MouseEvent event) {
+        if(selectedLabel != locateLabel) {
+            locateLabel.setStyle("-fx-text-fill: #818380;");
+            locateIcon.setImage(new Image(getClass().getResourceAsStream("/icon/map.png")));
         }
     }
 
@@ -222,7 +269,6 @@ public class BasicPageController implements Initializable {
             settingIcon.setImage(new Image(getClass().getResourceAsStream("/icon/setting.png")));
         }
     }
-
 
 }
 

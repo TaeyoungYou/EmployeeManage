@@ -1,10 +1,12 @@
-package system.management.employee;
+package system.management.location;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import system.management.employee.Employee;
+import system.management.employee.EmployeeList;
 import system.management.path.ManageFile;
 
 import java.io.FileInputStream;
@@ -13,13 +15,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EmpExel {
+public class LocationExel {
 
-    public static void readEmpExel(){
+    public static void readLocationExel(){
         try{
             FileInputStream in = new FileInputStream(ManageFile.getPath());
             Workbook workbook = new XSSFWorkbook(in);
-            Sheet sheet = workbook.getSheetAt(0);
+            Sheet sheet = workbook.getSheetAt(1);
 
             for(Row row: sheet){
                 if(row.getRowNum() == 0){
@@ -29,25 +31,15 @@ public class EmpExel {
                 for(Cell cell: row){
                     cells.add(cell);
                 }
-                EmployeeList.addEmployee(
-                        Employee.createEmployee(
-                                cells.get(0).toString(),
-                                cells.get(1).toString(),
-                                cells.get(2).toString(),
-                                cells.get(3).toString(),
-                                cells.get(4).toString(),
-                                cells.get(5).toString(),
-                                cells.get(6).toString()
-                        )
-                );
+                LocationList.add(new Location(cells.get(0).toString(), cells.get(1).toString()));
             }
         }catch(IOException e){}
     }
-    public static void saveEmpExel(){
+    public static void saveLocationExel(){
         try{
             FileInputStream in = new FileInputStream(ManageFile.getPath());
             Workbook workbook = new XSSFWorkbook(in);
-            Sheet sheet = workbook.getSheetAt(0);
+            Sheet sheet = workbook.getSheetAt(1);
 
             int lastRow = sheet.getLastRowNum();
             for(int i = lastRow; i>0; i--){
@@ -57,16 +49,11 @@ public class EmpExel {
                 }
             }
 
-            List<Employee> tempList = EmployeeList.getEmployees();
+            List<Location> tempList = LocationList.getLocations();
             for(int i = 0; i<tempList.size(); i++){
                 Row row = sheet.createRow(i+1);
-                row.createCell(0).setCellValue(tempList.get(i).getName());
-                row.createCell(1).setCellValue(tempList.get(i).getBirth());
-                row.createCell(2).setCellValue(tempList.get(i).getPhone());
-                row.createCell(3).setCellValue(tempList.get(i).getEmail());
-                row.createCell(4).setCellValue(tempList.get(i).getExprience());
-                row.createCell(5).setCellValue(tempList.get(i).getRole());
-                row.createCell(6).setCellValue(tempList.get(i).getEtc());
+                row.createCell(0).setCellValue(tempList.get(i).getLocationName());
+                row.createCell(1).setCellValue(tempList.get(i).getAddress());
             }
 
             FileOutputStream out = new FileOutputStream(ManageFile.getPath());

@@ -6,7 +6,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.FileChooser;
-import system.management.employee.EmpFile;
+import system.management.path.ManageFile;
 
 import java.io.File;
 import java.net.URL;
@@ -28,11 +28,11 @@ public class SettingPageController implements Initializable {
         }else{
             pathField.setText("");
         }
-        EmpFile.setPath(pathField.getText());
+        ManageFile.setPath(pathField.getText());
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        pathField.setText(EmpFile.getPath());
+        pathField.setText(ManageFile.getPath());
     }
 }

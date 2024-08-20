@@ -4,6 +4,9 @@ module system.employeemanagesystem {
     requires java.desktop;
     requires org.apache.poi.poi;
     requires org.apache.poi.ooxml;
+    requires javafx.web;
+    requires com.sothawo.mapjfx;
+    requires org.json;
 
     exports system.app;
     opens system.app to javafx.fxml;
@@ -13,4 +16,6 @@ module system.employeemanagesystem {
     opens system.controller.employee to javafx.fxml;
     exports system.controller.setting;
     opens system.controller.setting to javafx.fxml;
+    exports system.controller.locate;
+    opens system.controller.locate to javafx.fxml;
 }
