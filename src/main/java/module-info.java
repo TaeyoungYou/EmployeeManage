@@ -18,4 +18,10 @@ module system.employeemanagesystem {
     opens system.controller.setting to javafx.fxml;
     exports system.controller.locate;
     opens system.controller.locate to javafx.fxml;
+    exports system.controller.project;
+    opens system.controller.project to javafx.fxml;
+    exports system.controller.project.add_scene;
+    opens system.controller.project.add_scene to javafx.fxml;
+    exports system.controller.project.update_scene;
+    opens system.controller.project.update_scene to javafx.fxml;
 }

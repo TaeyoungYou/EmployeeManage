@@ -113,6 +113,25 @@
                </padding>
             </Label>
             <Line endX="200.0" stroke="#2c2c2c" />
+            <Label fx:id="projectLabel" graphicTextGap="15.0" onMouseClicked="#handleClick" onMouseEntered="#handleMouseEnterProject" onMouseExited="#handleMouseExitProject" prefHeight="50.0" prefWidth="200.0" text="프로젝트" textFill="#818380">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <graphic>
+                  <ImageView fx:id="projectIcon" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../icon/project.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Label>
+            <Line endX="200.0" stroke="#2c2c2c" />
             <Label fx:id="empLabel" graphicTextGap="15.0" onMouseClicked="#handleClick" onMouseEntered="#handleMouseEnterEmp" onMouseExited="#handleMouseExitEmp" prefHeight="50.0" prefWidth="200.0" text="직원" textFill="#818380">
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -172,7 +191,7 @@
             <Line endX="200.0" stroke="#2c2c2c" />
             <ImageView fx:id="exitButton" onMouseClicked="#MouseClickedExit" onMouseEntered="#handleMouseEnterPower" onMouseExited="#handleMouseExitPower" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
-                  <Insets left="80.0" top="125.0" />
+                  <Insets left="80.0" top="70.0" />
                </VBox.margin>
                <image>
                   <Image url="@../../icon/power.png" />

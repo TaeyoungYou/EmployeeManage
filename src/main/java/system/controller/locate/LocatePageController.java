@@ -127,7 +127,7 @@ public class LocatePageController implements Initializable {
 
     private void setGeoCodeMap(String address){
         try{
-            String apiKey = "API_KEY";
+            String apiKey = "AIzaSyDRrXTyK5u4yHFUI9BRyn65YCaD4Dv1TEQ";
             String urlString = String.format("https://maps.googleapis.com/maps/api/geocode/json?address=%s&key=%s", URLEncoder.encode(address,"UTF-8"),apiKey);
 
             URL url = new URL(urlString);
@@ -180,6 +180,9 @@ public class LocatePageController implements Initializable {
         LocationList.add(location);
         locations.clear();
         locations.addAll(LocationList.getLocations());
+
+        nameField.setText("");
+        addrField.setText("");
     }
 
     public void delLocation(Location location){
