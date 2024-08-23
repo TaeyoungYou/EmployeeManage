@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="930.0" style="-fx-background-color: #2B2D30;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="system.controller.project.update_scene.ProjectDataController">
+   <center>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <Pane prefHeight="70.0">
+               <children>
+                  <Button fx:id="submitBtn" layoutX="866.0" layoutY="15.0" mnemonicParsing="false" onAction="#submitClicked" prefHeight="40.0" prefWidth="50.0" text="수정">
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+            <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0">
+               <children>
+                  <Label text="프로젝트 명 " textFill="#ced0d6">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <TextField fx:id="projectNameField" prefHeight="25.0" prefWidth="250.0">
+                     <HBox.margin>
+                        <Insets left="5.0" />
+                     </HBox.margin>
+                  </TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0">
+               <children>
+                  <Label text="지점" textFill="#ced0d6">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="100.0" />
+                     </HBox.margin>
+                  </Label>
+                  <ChoiceBox fx:id="placeChoice" minHeight="25.0" minWidth="200.0" prefHeight="25.0" prefWidth="200.0">
+                     <HBox.margin>
+                        <Insets left="10.0" right="70.0" />
+                     </HBox.margin>
+                  </ChoiceBox>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="80.0" prefWidth="200.0">
+               <padding>
+                  <Insets left="20.0" />
+               </padding>
+               <children>
+                  <Label text="시작일" textFill="#ced0d6">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <DatePicker fx:id="startDate" prefWidth="200.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </DatePicker>
+                  <Label text="종료일" textFill="#ced0d6">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets left="50.0" />
+                     </HBox.margin>
+                  </Label>
+                  <DatePicker fx:id="endDate" prefWidth="200.0">
+                     <HBox.margin>
+                        <Insets left="10.0" />
+                     </HBox.margin>
+                  </DatePicker>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="470.0" prefWidth="930.0" spacing="50.0">
+               <children>
+                  <VBox prefHeight="470.0" prefWidth="220.0">
+                     <children>
+                        <BorderPane prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #1E1F22;">
+                           <center>
+                              <Label text="총 직원" textFill="#ced0d6" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </center>
+                        </BorderPane>
+                        <ScrollPane fx:id="totalScroll" hbarPolicy="NEVER" prefHeight="420.0" style="-fx-background-color: #2B2D30; -fx-background: #2B2D30; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;" vbarPolicy="NEVER" />
+                     </children>
+                  </VBox>
+                  <ImageView fx:id="addIcon" fitHeight="52.0" fitWidth="52.0" onMouseClicked="#onClicked" onMouseEntered="#handleMouseEnterAdd" onMouseExited="#handleMouseExitAdd" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../../icon/add_right.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+                  <VBox prefHeight="470.0" prefWidth="220.0">
+                     <children>
+                        <BorderPane prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #1E1F22;">
+                           <center>
+                              <Label text="추가된 직원" textFill="#ced0d6" BorderPane.alignment="CENTER">
+                                 <font>
+                                    <Font size="18.0" />
+                                 </font>
+                              </Label>
+                           </center>
+                        </BorderPane>
+                        <ScrollPane fx:id="addScroll" prefHeight="420.0" style="-fx-background-color: #2B2D30; -fx-background: #2B2D30; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </center>
+</BorderPane>

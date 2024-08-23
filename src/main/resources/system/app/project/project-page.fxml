@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="mainPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1080.0" style="-fx-background-color: #2B2D30;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="system.controller.project.ProjectPageController">
+   <left>
+      <VBox alignment="CENTER_RIGHT" prefWidth="150.0" style="-fx-background-color: #26282B; -fx-border-color: transparent,transparent,transparent, #2B2D30; -fx-border-width: 0 1px 0;" BorderPane.alignment="CENTER_LEFT">
+         <children>
+            <BorderPane prefHeight="70.0" prefWidth="150.0">
+               <center>
+                  <ImageView fx:id="addIcon" fitHeight="60.0" fitWidth="60.0" onMouseClicked="#onClicked" onMouseEntered="#onEntered" onMouseExited="#onExited" pickOnBounds="true" preserveRatio="true" BorderPane.alignment="CENTER">
+                     <image>
+                        <Image url="@../../../icon/project_add.png" />
+                     </image>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </ImageView>
+               </center>
+               <VBox.margin>
+                  <Insets bottom="10.0" />
+               </VBox.margin>
+            </BorderPane>
+            <ScrollPane fx:id="scrollPane" hbarPolicy="NEVER" prefHeight="720.0" prefWidth="150.0" style="-fx-background-color: #26282B; -fx-background: #26282B; -fx-focus-color: transparent; -fx-faint-focus-color: transparent;" vbarPolicy="NEVER" />
+         </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </VBox>
+   </left>
+   <center>
+      <BorderPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+</BorderPane>
