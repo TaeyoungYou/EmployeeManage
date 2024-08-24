@@ -8,6 +8,7 @@ import javafx.stage.StageStyle;
 import system.management.employee.EmpExel;
 import system.management.location.LocationExel;
 import system.management.path.ManageFile;
+import system.management.project.ProjectExel;
 
 import java.io.IOException;
 
@@ -17,6 +18,7 @@ public class App extends Application {
         ManageFile.initProperties("src/main/resources/path/filePaths.csv");
         EmpExel.readEmpExel();
         LocationExel.readLocationExel();
+        ProjectExel.readProjectExel();
 
         FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/system/app/basic-page.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
@@ -30,6 +32,7 @@ public class App extends Application {
         ManageFile.saveProperty("src/main/resources/path/filePaths.csv");
         EmpExel.saveEmpExel();
         LocationExel.saveLocationExel();
+        ProjectExel.saveProjectExel();
     }
 
     public static void main(String[] args) {

@@ -24,4 +24,7 @@ module system.employeemanagesystem {
     opens system.controller.project.add_scene to javafx.fxml;
     exports system.controller.project.update_scene;
     opens system.controller.project.update_scene to javafx.fxml;
+
+    exports system.management.project;
+    exports system.management.employee;
 }

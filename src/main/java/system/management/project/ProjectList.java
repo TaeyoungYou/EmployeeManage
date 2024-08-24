@@ -6,7 +6,7 @@ import java.util.List;
 public class ProjectList {
     private static List<Project> projects = new ArrayList<Project>();
 
-    public void add(Project project) {
+    public static void add(Project project) {
         projects.add(project);
     }
 

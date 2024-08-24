@@ -14,10 +14,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class EmpExel {
+    private static final String pathKey = "ManagePath";
 
     public static void readEmpExel(){
         try{
-            FileInputStream in = new FileInputStream(ManageFile.getPath());
+            FileInputStream in = new FileInputStream(ManageFile.getPath(pathKey));
             Workbook workbook = new XSSFWorkbook(in);
             Sheet sheet = workbook.getSheetAt(0);
 
@@ -45,7 +46,7 @@ public class EmpExel {
     }
     public static void saveEmpExel(){
         try{
-            FileInputStream in = new FileInputStream(ManageFile.getPath());
+            FileInputStream in = new FileInputStream(ManageFile.getPath(pathKey));
             Workbook workbook = new XSSFWorkbook(in);
             Sheet sheet = workbook.getSheetAt(0);
 
@@ -69,7 +70,7 @@ public class EmpExel {
                 row.createCell(6).setCellValue(tempList.get(i).getEtc());
             }
 
-            FileOutputStream out = new FileOutputStream(ManageFile.getPath());
+            FileOutputStream out = new FileOutputStream(ManageFile.getPath(pathKey));
             workbook.write(out);
         }catch(IOException e){}
     }

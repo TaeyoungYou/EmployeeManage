@@ -12,6 +12,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.*;
 import system.controller.project.update_scene.ProjectDataController;
 import system.management.project.Project;
+import system.management.project.ProjectList;
 
 import java.io.IOException;
 import java.net.URL;
@@ -21,7 +22,7 @@ public class ProjectPageController implements Initializable {
     @FXML private BorderPane mainPane;
     @FXML private ScrollPane scrollPane;
 
-    private static ObservableList<Project> projects = FXCollections.observableArrayList();
+    private static ObservableList<Project> projects = FXCollections.observableArrayList(ProjectList.getProjects());
     private VBox projectsBox = new VBox();
 
     @Override

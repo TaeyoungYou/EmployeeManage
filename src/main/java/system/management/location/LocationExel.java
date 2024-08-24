@@ -16,10 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LocationExel {
+    private static final String pathKey = "ManagePath";
 
     public static void readLocationExel(){
         try{
-            FileInputStream in = new FileInputStream(ManageFile.getPath());
+            FileInputStream in = new FileInputStream(ManageFile.getPath(pathKey));
             Workbook workbook = new XSSFWorkbook(in);
             Sheet sheet = workbook.getSheetAt(1);
 
@@ -37,7 +38,7 @@ public class LocationExel {
     }
     public static void saveLocationExel(){
         try{
-            FileInputStream in = new FileInputStream(ManageFile.getPath());
+            FileInputStream in = new FileInputStream(ManageFile.getPath(pathKey));
             Workbook workbook = new XSSFWorkbook(in);
             Sheet sheet = workbook.getSheetAt(1);
 
@@ -56,7 +57,7 @@ public class LocationExel {
                 row.createCell(1).setCellValue(tempList.get(i).getAddress());
             }
 
-            FileOutputStream out = new FileOutputStream(ManageFile.getPath());
+            FileOutputStream out = new FileOutputStream(ManageFile.getPath(pathKey));
             workbook.write(out);
         }catch(IOException e){}
     }

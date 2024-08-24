@@ -1,10 +1,16 @@
 package system.management.path;
 
 import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ManageFile {
-    private static final String key = "ManagePath";
-    private static String path;
+    public static Map<String, String> filePaths = new HashMap<String, String>() {
+        {
+            put("ManagePath","");
+            put("ReportPath","");
+        }
+    };
 
     public static void initProperties(String path) {
         try{
@@ -13,13 +19,12 @@ public class ManageFile {
             String line;
             while((line=br.readLine())!=null){
                 properties = line.split("=");
-                if(properties[0].trim().equals(key)){
+                if(filePaths.containsKey(properties[0].trim())){
                     if(properties[1].equals("null")){
-                        ManageFile.path="";
+                        filePaths.put(properties[0].trim(),"");
                     }else{
-                        ManageFile.path = properties[1];
+                        filePaths.put(properties[0].trim(),properties[1].trim());
                     }
-                    break;
                 }
             }
             br.close();
@@ -29,18 +34,21 @@ public class ManageFile {
 
     }
 
-    public static void setPath(String path){
-        ManageFile.path = path;
+    public static void setPath(String key, String path){
+        filePaths.put(key,path);
     }
-    public static String getPath(){
-        return ManageFile.path;
+    public static String getPath(String key){
+        return filePaths.get(key);
     }
 
     public static void saveProperty(String toSavePath){
         try{
             BufferedWriter bw = new BufferedWriter(new FileWriter(toSavePath));
-            String property = String.format("%s=%s",key,path);
-            bw.write(property);
+            StringBuilder builder = new StringBuilder();
+            for(String key:filePaths.keySet()){
+                builder.append(key).append("=").append(filePaths.get(key)).append("\n");
+            }
+            bw.write(builder.toString());
             bw.close();
         }catch(IOException e){
             e.printStackTrace();

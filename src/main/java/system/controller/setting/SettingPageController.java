@@ -13,9 +13,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 public class SettingPageController implements Initializable {
+    private final String pathKey = "ManagePath";
+    private final String tempKey = "ReportPath";
 
     @FXML private BorderPane mainPane;
     @FXML private TextField pathField;
+    @FXML private TextField reportField;
 
     @FXML
     private void pathBtn(MouseEvent event) {
@@ -28,11 +31,25 @@ public class SettingPageController implements Initializable {
         }else{
             pathField.setText("");
         }
-        ManageFile.setPath(pathField.getText());
+        ManageFile.setPath(pathKey, pathField.getText());
+    }
+    @FXML
+    private void reportBtn(MouseEvent event) {
+        FileChooser fileChooser = new FileChooser();
+
+        File selectedFile = fileChooser.showOpenDialog(mainPane.getScene().getWindow());
+
+        if(selectedFile != null) {
+            reportField.setText(selectedFile.getAbsolutePath());
+        }else{
+            reportField.setText("");
+        }
+        ManageFile.setPath(tempKey, reportField.getText());
     }
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        pathField.setText(ManageFile.getPath());
+        pathField.setText(ManageFile.getPath(pathKey));
+        reportField.setText(ManageFile.getPath(tempKey));
     }
 }

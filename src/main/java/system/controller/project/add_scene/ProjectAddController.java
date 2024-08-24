@@ -21,6 +21,7 @@ import system.management.employee.EmployeeList;
 import system.management.location.Location;
 import system.management.location.LocationList;
 import system.management.project.Project;
+import system.management.project.ProjectList;
 
 import java.io.IOException;
 import java.net.URL;
@@ -79,6 +80,7 @@ public class ProjectAddController implements Initializable {
         ProjectPageController controller = ProjectControllerManager.getProjectPageController();
         Project newProject = new Project(projectNameField.getText(),startDate.getValue(),endDate.getValue(),getLocation(placeChoice.getValue()),employeeList);
         controller.setProject(newProject);
+        ProjectList.add(newProject);
         resetField();
     }
 
