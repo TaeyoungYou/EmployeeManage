@@ -9,6 +9,7 @@ import system.management.employee.EmpExel;
 import system.management.location.LocationExel;
 import system.management.path.ManageFile;
 import system.management.project.ProjectExel;
+import system.management.report.ReportProject;
 
 import java.io.IOException;
 
@@ -33,6 +34,7 @@ public class App extends Application {
         EmpExel.saveEmpExel();
         LocationExel.saveLocationExel();
         ProjectExel.saveProjectExel();
+        ReportProject.exportReport();
     }
 
     public static void main(String[] args) {
