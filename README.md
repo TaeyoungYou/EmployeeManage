@@ -39,5 +39,6 @@ Human Resource and Financial Management System
 ### 17. Export jar
 
 ## References
-https://feathericons.com/
-https://www.sothawo.com/projects/mapjfx/
+* https://feathericons.com/
+* https://www.sothawo.com/projects/mapjfx/
+
